@@ -4,6 +4,13 @@ import { motion } from 'framer-motion';
 import Footer from './components/Footer'
 import { ThemeProvider } from '@mui/material/styles';
 import theme from './styles/theme'; 
+import './App.css'
+import Logo from './Images/GoalGuruLogo.jpg';
+import LogoCircle from './Images/GoalGuruLogoCircle.png';
+// font awesome
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faBullseye, faSignal, faTrophy, faGamepad } from '@fortawesome/free-solid-svg-icons'
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
 
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'; // Import necessary components
 
@@ -19,22 +26,37 @@ import Research from './components/Research'; // Import the new Research compone
 const App = () => {
   return (
     <ThemeProvider theme={theme}> {/* Wrap your app with ThemeProvider */}
+    <Box sx={{ 
+  // Example: 50% opacity
+background: 'linear-gradient(to right, #311518, #743d73, #dd5040)'}}>
       <Router>
       {/* <Box sx={{ backgroundColor: '#f0f0f0', minHeight: '100vh', display: 'flex', flexDirection: 'column' }}> */}
         <Box sx={{ 
   // Example: 50% opacity
-background: 'linear-gradient(to right, rgba(0, 128, 0, 0.5), rgba(255, 215, 0, 0.5))', // Green to Gold, 50% opacity, // Green to Gold gradient
+background:'linear-gradient(to right,#d7eae5, #fffae8)', // Green to Gold, 50% opacity, // Green to Gold gradient
   minHeight: '100vh', // Ensure full viewport height
   display: 'flex',
   flexDirection: 'column',
+  // background: 'linear-gradient(to right, #008000, #FFD700)', // You/r gradient
+  backgroundClip: 'text',
+  color: 'transparent', // Important: Make the text transparent so the gradient shows through
+  fontWeight: 'bold', 
 }} >
         <Container maxWidth="lg" sx={{ mt: 4, mb: 4, flexGrow: 1 }}>
           {/* Navigation */}
           <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 4 }}> {/* Style the navigation */}
-          <Typography variant="h5" component="h1" gutterBottom sx={{ fontWeight: 'bold' }}>
-            GoalGuru
+          <Typography variant="h5" component="h1" gutterBottom sx={{ 
+            background: 'linear-gradient(to right, #c5948c, #fffae8))', // Your gradient
+            backgroundClip: 'text',
+            color: 'transparent', // Important: Make the text transparent so the gradient shows through
+            fontWeight: 'bold',
+            display:'flex',
+            alignItems: 'center',
+            gap: '10px'
+              }}>
+            <img style={{width:'80px', height:'80px'}} src={LogoCircle}/><span>TriumphTrainer</span>
           </Typography>
-            <Box sx={{ display: 'flex', gap: 2 }}>
+            <Box sx={{ display: 'flex', gap: 2 , color: 'white'}}>
               <Button component={Link} to="/" color="inherit">Home</Button>
               <Button component={Link} to="/testimonials" color="inherit">Testimonials</Button>
               <Button component={Link} to="/research" color="inherit">Research</Button>
@@ -50,6 +72,7 @@ background: 'linear-gradient(to right, rgba(0, 128, 0, 0.5), rgba(255, 215, 0, 0
         <Footer />
       </Box>
       </Router>
+      </Box>
       </ThemeProvider>
   );
 };
@@ -71,7 +94,7 @@ const HeroSection = () => (
     </Box>
     {/* Placeholder Image/Video */}
     <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-      <img src="placeholder-hero.jpg" alt="Hero" style={{ maxWidth: '100%', height: 'auto' }} />
+      <img src={Logo} alt="Hero" style={{ boxShadow:'0px 0px 20px 20px rgba(49, 21, 24, 0.4)', maxWidth: '200px', height: 'auto', borderRadius: '100%', margin: '15px 0px 30px' }} />
     </Box>
   </motion.section>
 );
@@ -92,7 +115,7 @@ const MissionSection = () => (
 
 // import { Box, Container, Typography, Button, Grid, TextField } from '@mui/material';
 // import { motion } from 'framer-motion';
-
+const helpSectionImageSX = { color:'#311518', fontSize: '48px', margin: '10px auto', width: 80, height: 80, borderRadius: '50%', backgroundColor: '#b87dbb', mb: 2, display: 'flex', justifyContent: 'center', alignItems: 'center' }
 const HelpSection = () => (
   <motion.section
     initial={{ opacity: 0, y: 20 }}
@@ -108,8 +131,9 @@ const HelpSection = () => (
         <Grid item xs={12} sm={4}>
           <Box sx={{ textAlign: 'center' }}>
             {/* Placeholder Icon/Image */}
-            <Box component="div" sx={{ width: 80, height: 80, borderRadius: '50%', backgroundColor: 'lightgray', mb: 2, display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-              {/* Add your icon/image here */}
+            <Box component="div" sx={helpSectionImageSX}>
+            <FontAwesomeIcon icon={faBullseye} />
+            
             </Box>
             <Typography variant="h6" component="h3" gutterBottom>
               Personalized Goal Setting
@@ -122,8 +146,8 @@ const HelpSection = () => (
         <Grid item xs={12} sm={4}>
           <Box sx={{ textAlign: 'center' }}>
             {/* Placeholder Icon/Image */}
-             <Box component="div" sx={{ width: 80, height: 80, borderRadius: '50%', backgroundColor: 'lightgray', mb: 2, display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-              {/* Add your icon/image here */}
+             <Box component="div" sx={helpSectionImageSX}>
+             <FontAwesomeIcon icon={faSignal} />
             </Box>
             <Typography variant="h6" component="h3" gutterBottom>
               Custom Practice Plans
@@ -136,8 +160,8 @@ const HelpSection = () => (
         <Grid item xs={12} sm={4}>
           <Box sx={{ textAlign: 'center' }}>
             {/* Placeholder Icon/Image */}
-             <Box component="div" sx={{ width: 80, height: 80, borderRadius: '50%', backgroundColor: 'lightgray', mb: 2, display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-              {/* Add your icon/image here */}
+             <Box component="div" sx={helpSectionImageSX}>
+             <FontAwesomeIcon icon={faTrophy} />
             </Box>
             <Typography variant="h6" component="h3" gutterBottom>
               Motivation & Gamification
@@ -152,6 +176,25 @@ const HelpSection = () => (
   </motion.section>
 );
 
+const textFieldSX =  {
+  
+  // Root class for the input field
+  "& .MuiOutlinedInput-root": {
+    color: "#fff",
+    // Class for the border around the input field
+    "& .MuiOutlinedInput-notchedOutline": {
+      borderColor: "#fff",
+      // borderWidth: "2px",
+    },
+    '&:hover .MuiOutlinedInput-notchedOutline, &:focus .MuiOutlinedInput-notchedOutline': {
+    borderColor: '#fc523f'
+  },
+  },
+  // Class for the label of the input field
+  "& .MuiInputLabel-outlined": {
+    color: "#fff",
+  },
+}
 
 const SignupSection = () => (
   <motion.section
@@ -165,9 +208,9 @@ const SignupSection = () => (
         Sign Up & Start Your Journey
       </Typography>
       <Button variant="contained" color="info">Accent Button</Button>
-      <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 2, mt: 4 }}> {/* Center the form */}
-        <TextField label="Email" variant="outlined" fullWidth margin="normal" />
-        <TextField label="Password" variant="outlined" fullWidth margin="normal" type="password" />
+      <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 2, mt: 4, color:'#fff !important' }}> {/* Center the form */}
+        <TextField sx={textFieldSX} label="Email" variant="outlined" fullWidth margin="normal" />
+        <TextField  sx={textFieldSX} label="Password" variant="outlined" fullWidth margin="normal" type="password" />
         <Button variant="contained" color="primary" sx={{ width: '100%' }}>
           Sign Up
         </Button>

@@ -4,21 +4,22 @@ import { createTheme } from '@mui/material/styles';
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#FFD700', // Gold
-      contrastText: '#000',
+      main: '#d7eae5', // Gold
+      contrastText: '#311518',
+      borderRadius: '30px'
     },
     secondary: {
-      main: '#3CB371', // Minty Dark Green
+      main: '#b87dbb', // Minty Dark Green
       contrastText: '#fff', // White or very light text for contrast
     },
     // Update info/success if you were using it.  Here are some lighter options:
     info: {
-        main: '#3CB371', // Light Blue
+        main: '#b87dbb', // Light Blue
         contrastText: '#fff',
       },
     success: {
         main: '#90EE90', // Light Green
-        contrastText: '#000',
+        contrastText: '#fff',
     },
     background: {
       default: '#f0f0f0',

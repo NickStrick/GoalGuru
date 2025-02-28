@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
 .App {
   text-align: center;
 }
@@ -35,4 +36,18 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+*, :after, :before, button, button:focus, input, textarea {
+  -webkit-tap-highlight-color: transparent;
+  box-sizing: inherit;
+  font-family: "Nunito", sans-serif !important;
+  font-optical-sizing: auto;
+  font-weight:700;
+  font-style: normal;
+
+  outline: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
 }

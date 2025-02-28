@@ -4,7 +4,7 @@ const Footer = () => (
   <Box
     component="footer"
     sx={{
-      backgroundColor: '#333', // Darker background color for footer
+      backgroundColor: '#311518', // Darker background color for footer
       color: 'white',
       py: 4, // Padding top and bottom
       mt: 'auto' // Push footer to the bottom
