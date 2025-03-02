@@ -9,7 +9,7 @@ import Logo from './Images/GoalGuruLogo.jpg';
 import LogoCircle from './Images/GoalGuruLogoCircle.png';
 // font awesome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBullseye, faSignal, faTrophy, faGamepad } from '@fortawesome/free-solid-svg-icons'
+import { faBullseye, faSignal, faGrinStars, faGamepad } from '@fortawesome/free-solid-svg-icons'
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
 
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'; // Import necessary components
@@ -58,8 +58,8 @@ background:'linear-gradient(to right,#d7eae5, #fffae8)', // Green to Gold, 50% o
           </Typography>
             <Box sx={{ display: 'flex', gap: 2 , color: 'white'}}>
               <Button component={Link} to="/" color="inherit">Home</Button>
-              <Button component={Link} to="/testimonials" color="inherit">Testimonials</Button>
-              <Button component={Link} to="/research" color="inherit">Research</Button>
+              <Button component={Link} to="/testimonials" color="inherit">About</Button>
+              {/* <Button component={Link} to="/research" color="inherit">Research</Button> */}
             </Box>
           </Box>
 
@@ -83,10 +83,10 @@ const HeroSection = () => (
   <motion.section initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
     <Box sx={{ textAlign: 'center', mb: 4 }}>
       <Typography variant="h3" component="h1" gutterBottom sx={{ fontWeight: 'bold' }}>
-        Track, Visualize, and Take Action!
+        Set, Plan, Achieve
       </Typography>
       <Typography variant="h6" component="h2" gutterBottom>
-        Achieve your dreams and have success in every area of your life.
+        Achieve your goals and make real progress
       </Typography>
       <Button variant="contained" color="primary">
         Get Started
@@ -107,7 +107,7 @@ const MissionSection = () => (
         Our Mission
       </Typography>
       <Typography variant="body1">
-        We're dedicated to helping you achieve your goals through personalized AI-powered guidance and a supportive community.
+      To make goal setting and habit building easy, accessable, and effective for everyone, through personalized planning that utilizes the power of motivational science and AI to drive real results.
       </Typography>
     </Box>
   </motion.section>
@@ -125,7 +125,7 @@ const HelpSection = () => (
   >
     <Container maxWidth="md">
       <Typography variant="h4" component="h2" align="center" gutterBottom>
-        How We Can Help
+        What we can achieve together
       </Typography>
       <Grid container spacing={4}>
         <Grid item xs={12} sm={4}>
@@ -136,10 +136,10 @@ const HelpSection = () => (
             
             </Box>
             <Typography variant="h6" component="h3" gutterBottom>
-              Personalized Goal Setting
+              Set Personalized Goals
             </Typography>
             <Typography variant="body2">
-              Our AI analyzes your aspirations and sets achievable, tailored goals.
+              Analyze your aspirations and set achievable, tailored goals with actionable steps using the help of AI.
             </Typography>
           </Box>
         </Grid>
@@ -150,10 +150,10 @@ const HelpSection = () => (
              <FontAwesomeIcon icon={faSignal} />
             </Box>
             <Typography variant="h6" component="h3" gutterBottom>
-              Custom Practice Plans
+              Consistencey and Growth
             </Typography>
             <Typography variant="body2">
-              We create dynamic practice plans that adapt to your progress.
+              We cultivate consistent progress with research based modivational techniques, community engagement and data driven peronslaized plans
             </Typography>
           </Box>
         </Grid>
@@ -161,13 +161,13 @@ const HelpSection = () => (
           <Box sx={{ textAlign: 'center' }}>
             {/* Placeholder Icon/Image */}
              <Box component="div" sx={helpSectionImageSX}>
-             <FontAwesomeIcon icon={faTrophy} />
+             <FontAwesomeIcon icon={faGrinStars} />
             </Box>
             <Typography variant="h6" component="h3" gutterBottom>
-              Motivation & Gamification
+              Quantifiable Real Results
             </Typography>
             <Typography variant="body2">
-              Stay motivated with our gamified approach and personalized encouragement.
+              Reflect on your journey through visualized Effort, Progress and Success metrics. And pivot based on your reflections. A choose your own adventure approach to goal setting.
             </Typography>
           </Box>
         </Grid>
@@ -195,29 +195,29 @@ const textFieldSX =  {
     color: "#fff",
   },
 }
-
+// <Button variant="contained" color="info">Accent Button</Button>
+      // <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 2, mt: 4, color:'#fff !important' }}> {/* Center the form */}
+      //   <TextField sx={textFieldSX} label="Email" variant="outlined" fullWidth margin="normal" />
+      //   <TextField  sx={textFieldSX} label="Password" variant="outlined" fullWidth margin="normal" type="password" />
+      //   <Button variant="contained" color="primary" sx={{ width: '100%' }}>
+      //     Sign Up
+      //   </Button>
+      // </Box>
 const SignupSection = () => (
   <motion.section
     initial={{ opacity: 0, y: 20 }}
     animate={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.8, delay: 0.6 }} // Added delay for staggered animation
-    sx={{ py: 8, backgroundColor: '#f5f5f5' }} // Added background color and padding
+    sx={{ py: 8, backgroundColor: '#f5f5f5', paddingTop: '50px !important' }} // Added background color and padding
   >
     <Container maxWidth="md" variant="contained" color="info">
       <Typography variant="h4" component="h2" align="center" gutterBottom>
-        Sign Up & Start Your Journey
+        Write the next chapter of your journey
       </Typography>
-      <Button variant="contained" color="info">Accent Button</Button>
-      <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 2, mt: 4, color:'#fff !important' }}> {/* Center the form */}
-        <TextField sx={textFieldSX} label="Email" variant="outlined" fullWidth margin="normal" />
-        <TextField  sx={textFieldSX} label="Password" variant="outlined" fullWidth margin="normal" type="password" />
-        <Button variant="contained" color="primary" sx={{ width: '100%' }}>
-          Sign Up
-        </Button>
-      </Box>
+      
 
       <Typography variant="body1" align="center" sx={{ mt: 2 }}>
-        Or download our mobile app:
+        Download our mobile app:
       </Typography>
       <Box sx={{ display: 'flex', justifyContent: 'center', mt: 2 }}>
         {/* Placeholder App Store/Google Play Buttons */}
