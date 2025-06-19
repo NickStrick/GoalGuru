@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Container, Typography, Button, Grid, TextField } from '@mui/material';
+import { Box, Container, Typography, Button, Grid } from '@mui/material';
 import { motion } from 'framer-motion';
 import Footer from './components/Footer'
 import { ThemeProvider } from '@mui/material/styles';
@@ -9,8 +9,7 @@ import Logo from './Images/GoalGuruLogo.jpg';
 import LogoCircle from './Images/GoalGuruLogoCircle.png';
 // font awesome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBullseye, faSignal, faGrinStars, faGamepad } from '@fortawesome/free-solid-svg-icons'
-import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
+import { faBullseye, faSignal, faGrinStars } from '@fortawesome/free-solid-svg-icons'
 
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'; // Import necessary components
 
@@ -54,7 +53,7 @@ background:'linear-gradient(to right,#d7eae5, #fffae8)', // Green to Gold, 50% o
             alignItems: 'center',
             gap: '10px'
               }}>
-            <img style={{width:'80px', height:'80px'}} src={LogoCircle}/><span>TriumphTrainer</span>
+            <img alt={'logo'} style={{width:'80px', height:'80px'}} src={LogoCircle}/><span>TriumphTrainer</span>
           </Typography>
             <Box sx={{ display: 'flex', gap: 2 , color: 'white'}}>
               <Button component={Link} to="/" color="inherit">Home</Button>
@@ -176,25 +175,25 @@ const HelpSection = () => (
   </motion.section>
 );
 
-const textFieldSX =  {
+// const textFieldSX =  {
   
-  // Root class for the input field
-  "& .MuiOutlinedInput-root": {
-    color: "#fff",
-    // Class for the border around the input field
-    "& .MuiOutlinedInput-notchedOutline": {
-      borderColor: "#fff",
-      // borderWidth: "2px",
-    },
-    '&:hover .MuiOutlinedInput-notchedOutline, &:focus .MuiOutlinedInput-notchedOutline': {
-    borderColor: '#fc523f'
-  },
-  },
-  // Class for the label of the input field
-  "& .MuiInputLabel-outlined": {
-    color: "#fff",
-  },
-}
+//   // Root class for the input field
+//   "& .MuiOutlinedInput-root": {
+//     color: "#fff",
+//     // Class for the border around the input field
+//     "& .MuiOutlinedInput-notchedOutline": {
+//       borderColor: "#fff",
+//       // borderWidth: "2px",
+//     },
+//     '&:hover .MuiOutlinedInput-notchedOutline, &:focus .MuiOutlinedInput-notchedOutline': {
+//     borderColor: '#fc523f'
+//   },
+//   },
+//   // Class for the label of the input field
+//   "& .MuiInputLabel-outlined": {
+//     color: "#fff",
+//   },
+// }
 // <Button variant="contained" color="info">Accent Button</Button>
       // <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 2, mt: 4, color:'#fff !important' }}> {/* Center the form */}
       //   <TextField sx={textFieldSX} label="Email" variant="outlined" fullWidth margin="normal" />
